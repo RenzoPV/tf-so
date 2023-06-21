@@ -52,11 +52,11 @@ $.getJSON('http://3.208.71.114:5000/desahuciados', function(data) {
 
 function editar_albergue(i){
     localStorage.setItem('albergue', i);
-    window.location.href = 'edit-a.html';
+    window.location.href = 'templatess/edit-a.html';
 }
 function editar_desahuciado(i){
     localStorage.setItem('desahuciado', i);
-    window.location.href = 'edit-d.html';
+    window.location.href = 'templatess/edit-d.html';
 }
 
 function eliminar_albergue(i){
