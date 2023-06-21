@@ -1,0 +1,22 @@
+var albergue_id = localStorage.getItem('albergue');
+
+function miFuncion() {
+    var formulario = document.getElementById("form_albergue");
+    formulario.action = "http://3.208.71.114:5000/actualizaralbergue/"+albergue_id.toString();
+}
+  
+setTimeout(miFuncion, 1000);
+
+$.getJSON('http://3.208.71.114:5000/albergues', function(data) {
+    
+    var input=document.getElementById('1');
+    input.value=data.albergues[albergue_id].Nombre.toString();
+    var input=document.getElementById('2');
+    input.value=data.albergues[albergue_id].Ciudad.toString();
+    var input=document.getElementById('3');
+    input.value=data.albergues[albergue_id].Direccion.toString();
+    var input=document.getElementById('4');
+    input.value=data.albergues[albergue_id].Telefono.toString();
+    var input=document.getElementById('5');
+    input.value=data.albergues[albergue_id].Disponibilidad.toString();
+});
