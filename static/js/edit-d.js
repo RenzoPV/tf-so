@@ -1,13 +1,13 @@
 var desahuciado_id = localStorage.getItem('desahuciado');
 
-function miFuncion() {
-    var formulario = document.getElementById('form_desahuciado');
-    formulario.action = 'http://3.208.71.114:5000/actualizardesahuciado/'+desahuciado_id.toString();
-}
-  
-setTimeout(miFuncion, 1000);
+$.getJSON('http://44.203.242.36:5000/desahuciados', function(data) {
 
-$.getJSON('http://3.208.71.114:5000/desahuciados', function(data) {
+    function miFuncion() {
+        var formulario = document.getElementById('form_desahuciado');
+        formulario.action = 'http://44.203.242.36:5000/actualizardesahuciado/'+data.desahuciados[desahuciado_id].Id.toString();
+    }
+    
+    setTimeout(miFuncion, 1000);
     
     var input=document.getElementById('1');
     input.value=data.desahuciados[desahuciado_id].Nombre.toString();

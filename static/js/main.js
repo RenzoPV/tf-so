@@ -15,7 +15,7 @@ function cerrar2(){
     document.getElementById("but2").style.display="block";
 }
 
-$.getJSON('http://3.208.71.114:5000/albergues', function(data) {
+$.getJSON('http://44.203.242.36:5000/albergues', function(data) {
     
     var tbody = $('#albergues');
     for (var i = 0; i < data.albergues.length; i++) {
@@ -32,7 +32,7 @@ $.getJSON('http://3.208.71.114:5000/albergues', function(data) {
 
 });
 
-$.getJSON('http://3.208.71.114:5000/desahuciados', function(data) {
+$.getJSON('http://44.203.242.36:5000/desahuciados', function(data) {
     
     var tbody = $('#desahuciados');
     for (var i = 0; i < data.desahuciados.length; i++) {
@@ -60,8 +60,10 @@ function editar_desahuciado(i){
 }
 
 function eliminar_albergue(i){
-    $.getJSON('http://3.208.71.114:5000/eliminaralbergue/'+i.toString(), function(data) {});
+    $.getJSON('http://44.203.242.36:5000/eliminaralbergue/'+i.toString(), function(data) {});
+    location.reload();
 }
 function eliminar_desahuciado(i){
-    $.getJSON('http://3.208.71.114:5000/eliminardesahuciado/'+i.toString(), function(data) {});
+    $.getJSON('http://44.203.242.36:5000/eliminardesahuciado/'+i.toString(), function(data) {});
+    location.reload();
 }
